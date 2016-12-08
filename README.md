@@ -44,8 +44,6 @@ logged in 'root', credentials valid for 10.00 hours
 usage: /usr/local/bin/devpi [-h] [--version] [--debug] [-y] [-v]
                             [--clientdir DIR]
                             {quickstart,use,getjson,patchjson,list,remove,user,login,logoff,index,upload,test,push,install,refresh}
-                            ...
-
 ...
 ```
 
