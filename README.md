@@ -44,8 +44,6 @@ logged in 'root', credentials valid for 10.00 hours
 usage: /usr/local/bin/devpi [-h] [--version] [--debug] [-y] [-v]
                             [--clientdir DIR]
                             {quickstart,use,getjson,patchjson,list,remove,user,login,logoff,index,upload,test,push,install,refresh}
-                            ...
-
 ...
 ```
 
@@ -56,10 +54,3 @@ $ docker exec -it devpi-server devpi-client bash
 logged in 'root', credentials valid for 10.00 hours
 root@c4fa8a7b14cf:/#
 ```
-
-
-Known problems
---------------
-`devpi-server` cannot be started in the foreground. As such, a small script is
-used as Docker entrypoint to start `devpi-server` and tail the log file. This
-does mean that if `devpi-server` dies, the Docker container will keep running.

@@ -54,4 +54,21 @@ if [ "$initialize" == "yes" ]; then
 fi
 
 echo "ENTRYPOINT: Tailing log"
-tail -f "$DEVPI_SERVER_ROOT/.xproc/devpi-server/xprocess.log"
+tail -f "$DEVPI_SERVER_ROOT/.xproc/devpi-server/xprocess.log" &
+
+echo "ENTRYPOINT: Watching devpi-server"
+PID=$(cat "$DEVPI_SERVER_ROOT/.xproc/devpi-server/xprocess.PID")
+
+if [ -z "$PID" ]; then
+    echo "ENTRYPOINT: Could not determine PID of devpi-server!"
+    exit 1
+fi
+
+set +e
+
+while : ; do
+    kill -0 "$PID" > /dev/null 2>&1 || break
+    sleep 2s
+done
+
+echo "ENTRYPOINT: devpi-server died, exiting..."
