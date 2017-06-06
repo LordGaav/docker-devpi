@@ -27,14 +27,16 @@ elif [ -z "$DEVPI_ROOT_PASSWORD" ]; then
     DEVPI_ROOT_PASSWORD=$(generate_password)
 fi
 
-initialize=no
-if [ ! -f "$DEVPI_SERVER_ROOT/.serverversion" ]; then
-    initialize=yes
-fi
-
 if [ ! -d "$DEVPI_SERVER_ROOT" ]; then
     echo "ENTRYPOINT: Creating devpi-server root"
     mkdir -p "$DEVPI_SERVER_ROOT"
+fi
+
+initialize=no
+if [ ! -f "$DEVPI_SERVER_ROOT/.serverversion" ]; then
+    initialize=yes
+    echo "ENTRYPOINT: Initializing server root $DEVPI_SERVER_ROOT"
+    devpi-server --init --serverdir "$DEVPI_SERVER_ROOT"
 fi
 
 echo "ENTRYPOINT: Starting devpi-server"
