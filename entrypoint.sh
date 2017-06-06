@@ -13,7 +13,9 @@ function generate_password() {
 
 
 function kill_devpi() {
-    devpi-server --stop
+    _PID=$(cat "$DEVPI_SERVER_ROOT/.xproc/devpi-server/xprocess.PID")
+    echo "ENTRYPOINT: Sending SIGTERM to PID $_PID"
+    kill -SIGTERM "$_PID"
 }
 
 if [ "${1:-}" == "bash" ]; then
