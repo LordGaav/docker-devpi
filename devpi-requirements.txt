@@ -3,9 +3,8 @@ devpi-server==4.1.1
 devpi-client==2.7.0
 devpi-web==3.1.1
 
-# Patched version of semantic-ui theme until this MR is merged:
-# https://github.com/apihackers/devpi-semantic-ui/pull/1
-git+https://github.com/LordGaav/devpi-semantic-ui@add-pygments-css#egg=devpi-semantic-ui
+# Web skin
+devpi-semantic-ui>=0.2.2
 
 # LDAP plugin
 ldap3 < 2
