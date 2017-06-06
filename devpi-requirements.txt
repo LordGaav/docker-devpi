@@ -1,7 +1,7 @@
 # Main server and web views
-devpi-server==4.1.1
-devpi-client==2.7.0
-devpi-web==3.1.1
+devpi-server>=4.3.0
+devpi-client>=3.0.0
+devpi-web>=3.2.0
 
 # Web skin
 devpi-semantic-ui>=0.2.2
