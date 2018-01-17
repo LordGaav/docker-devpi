@@ -13,6 +13,7 @@ devpi-ldap
 
 # Web extensions
 devpi-findlinks
+devpi-lockdown
 
 # Tools
 devpi-cleaner
