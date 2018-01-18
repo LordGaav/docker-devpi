@@ -51,7 +51,7 @@ if [ "$initialize" == "yes" ]; then
     echo "ENTRYPOINT: Initializing devpi-server"
     devpi use http://localhost:3141
     devpi login root --password=''
-    echo "ENTRYPOINT: Setting root password"
+    echo "ENTRYPOINT: Setting root password to $DEVPI_ROOT_PASSWORD"
     devpi user -m root "password=$DEVPI_ROOT_PASSWORD"
     echo -n "$DEVPI_ROOT_PASSWORD" > "$DEVPI_SERVER_ROOT/.root_password"
     devpi logoff
