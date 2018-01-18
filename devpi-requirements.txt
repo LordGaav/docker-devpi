@@ -1,11 +1,10 @@
 # Main server and web views
-devpi-server==4.1.1
-devpi-client==2.7.0
-devpi-web==3.1.1
+devpi-server>=4.3.0
+devpi-client>=3.0.0
+devpi-web>=3.2.0
 
-# Patched version of semantic-ui theme until this MR is merged:
-# https://github.com/apihackers/devpi-semantic-ui/pull/1
-git+https://github.com/LordGaav/devpi-semantic-ui@add-pygments-css#egg=devpi-semantic-ui
+# Web skin
+devpi-semantic-ui>=0.2.2
 
 # LDAP plugin
 ldap3 < 2
@@ -17,5 +16,4 @@ devpi-lockdown==1.0.0
 
 # Tools
 devpi-cleaner==0.2.0
-# Install via Git until version >= 0.1.1 is available via Pypi
-git+https://github.com/innoteq/devpi-slack/@95933899818ce96039c561b6fdc8030ab5238125#egg=devpi-slack
+devpi-slack>=0.1.1
