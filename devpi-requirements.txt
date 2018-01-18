@@ -1,7 +1,7 @@
 # Main server and web views
-devpi-server>=4.3.0
-devpi-client>=3.0.0
-devpi-web>=3.2.0
+devpi-server==4.3.2
+devpi-client==3.1.0
+devpi-web==3.2.2
 
 # Web skin
 devpi-semantic-ui>=0.2.2
@@ -16,4 +16,4 @@ devpi-lockdown==1.0.0
 
 # Tools
 devpi-cleaner==0.2.0
-devpi-slack>=0.1.1
+devpi-slack==0.1.3
