@@ -3,7 +3,7 @@ Docker image for devpi
 A ready to use Docker image for [devpi](http://doc.devpi.net/latest/). It includes
 the following plugins and components:
 
-* devpi-server (>=4.3.0), devpi-web and devpi-client
+* devpi-server, devpi-web and devpi-client
 * [devpi-semantic-ui](https://github.com/apihackers/devpi-semantic-ui)
 * [devpi-ldap](https://pypi.python.org/pypi/devpi-ldap)
 * [devpi-findlinks](https://pypi.python.org/pypi/devpi-findlinks)
