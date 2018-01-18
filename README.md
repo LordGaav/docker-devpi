@@ -3,12 +3,13 @@ Docker image for devpi
 A ready to use Docker image for [devpi](http://doc.devpi.net/latest/). It includes
 the following plugins and components:
 
-* devpi-server (>=4.0.0), devpi-web and devpi-client
-* Semantic UI theme (with [patches](https://github.com/apihackers/devpi-semantic-ui/pull/1)).
+* devpi-server, devpi-web and devpi-client
+* [devpi-semantic-ui](https://github.com/apihackers/devpi-semantic-ui)
 * [devpi-ldap](https://pypi.python.org/pypi/devpi-ldap)
 * [devpi-findlinks](https://pypi.python.org/pypi/devpi-findlinks)
 * [devpi-cleaner](https://pypi.python.org/pypi/devpi-cleaner)
 * [devpi-slack](https://pypi.python.org/pypi/devpi-slack)
+* [devpi-lockdown](https://pypi.python.org/pypi/devpi-lockdown)
 
 Starting the image
 ------------------
@@ -34,7 +35,6 @@ docker run -d -p 3141:3141 -v /some/place:/devpi -v /path/to/ldap.yml:/ldap.yml 
 
 devpi-client helper
 -------------------
-
 A small helper script is provided to manipulate the running container. The
 script will automatically log in as the `root` user for running commands.
 
