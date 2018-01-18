@@ -9,6 +9,7 @@ the following plugins and components:
 * [devpi-findlinks](https://pypi.python.org/pypi/devpi-findlinks)
 * [devpi-cleaner](https://pypi.python.org/pypi/devpi-cleaner)
 * [devpi-slack](https://pypi.python.org/pypi/devpi-slack)
+* [devpi-lockdown](https://pypi.python.org/pypi/devpi-lockdown)
 
 Starting the image
 ------------------
@@ -34,7 +35,6 @@ docker run -d -p 3141:3141 -v /some/place:/devpi -v /path/to/ldap.yml:/ldap.yml 
 
 devpi-client helper
 -------------------
-
 A small helper script is provided to manipulate the running container. The
 script will automatically log in as the `root` user for running commands.
 
