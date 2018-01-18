@@ -1,10 +1,10 @@
 # Main server and web views
-devpi-server==4.3.2
-devpi-client==3.1.0
+devpi-server==4.4.0
+devpi-client==4.0.0
 devpi-web==3.2.2
 
 # Web skin
-devpi-semantic-ui>=0.2.2
+devpi-semantic-ui==0.2.2
 
 # LDAP plugin
 ldap3 < 2
