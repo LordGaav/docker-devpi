@@ -1,0 +1,12 @@
+version: '2.0'
+
+services:
+  devpi-server:
+    image: lordgaav/devpi:latest
+    ports:
+      - 3141:3141
+    volumes:
+      - /some/place:/devpi
+      - /path/to/ldap.yml:/ldap.yml
+    command:
+      - --ldap-config=/ldap.yml
