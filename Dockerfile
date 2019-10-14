@@ -1,5 +1,4 @@
-FROM python:3-slim
-MAINTAINER Nick Douma <nick.douma@nekoconeko.nl>
+FROM python:3.7
 
 # Install devpi and dependencies
 COPY devpi-requirements.txt /

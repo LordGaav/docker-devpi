@@ -1,18 +1,18 @@
 # Main server and web views
-devpi-server==4.4.0
-devpi-client==4.0.0
-devpi-web==3.2.2
+devpi-server==5.0.0
+devpi-client==5.0.0
+devpi-web==3.5.2
 
 # Web skin
 devpi-semantic-ui==0.2.2
 
 # LDAP plugin
-ldap3 < 2
-devpi-ldap==1.2.0
+ldap3==2.6.1
+devpi-ldap==1.2.2
 
 # Web extensions
 devpi-findlinks==2.0.0
-devpi-lockdown==1.0.0
+devpi-lockdown==1.0.1
 
 # Tools
 devpi-cleaner==0.2.0
