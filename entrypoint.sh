@@ -11,9 +11,8 @@ function generate_password() {
     set -e
 }
 
-
 function kill_devpi() {
-    _PID=$(cat "$DEVPI_SERVER_ROOT/.xproc/devpi-server/xprocess.PID")
+    _PID=$(pgrep devpi-server)
     echo "ENTRYPOINT: Sending SIGTERM to PID $_PID"
     kill -SIGTERM "$_PID"
 }
@@ -38,11 +37,13 @@ initialize=no
 if [ ! -f "$DEVPI_SERVER_ROOT/.serverversion" ]; then
     initialize=yes
     echo "ENTRYPOINT: Initializing server root $DEVPI_SERVER_ROOT"
-    devpi-server --init --serverdir "$DEVPI_SERVER_ROOT"
+    devpi-init --serverdir "$DEVPI_SERVER_ROOT"
 fi
 
 echo "ENTRYPOINT: Starting devpi-server"
-devpi-server --start --host 0.0.0.0 --port 3141 --serverdir "$DEVPI_SERVER_ROOT" --theme semantic-ui "$@"
+devpi-server --host 0.0.0.0 --port 3141 --serverdir "$DEVPI_SERVER_ROOT" "$@" &
+
+timeout 10 bash -c 'until printf "" 2>>/dev/null >>/dev/tcp/$0/$1; do sleep 1; done' localhost 3141
 
 echo "ENTRYPOINT: Installing signal traps"
 trap kill_devpi SIGINT SIGTERM
@@ -57,11 +58,8 @@ if [ "$initialize" == "yes" ]; then
     devpi logoff
 fi
 
-echo "ENTRYPOINT: Tailing log"
-tail -f "$DEVPI_SERVER_ROOT/.xproc/devpi-server/xprocess.log" &
-
 echo "ENTRYPOINT: Watching devpi-server"
-PID=$(cat "$DEVPI_SERVER_ROOT/.xproc/devpi-server/xprocess.PID")
+PID=$(pgrep devpi-server)
 
 if [ -z "$PID" ]; then
     echo "ENTRYPOINT: Could not determine PID of devpi-server!"
