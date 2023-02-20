@@ -8,6 +8,7 @@ the following plugins and components:
 * [devpi-cleaner](https://pypi.python.org/pypi/devpi-cleaner)
 * [devpi-slack](https://pypi.python.org/pypi/devpi-slack)
 * [devpi-lockdown](https://pypi.python.org/pypi/devpi-lockdown)
+* [devpi-json](https://pypi.org/project/devpi-json-info/)
 
 Starting the image
 ------------------
